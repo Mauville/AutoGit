@@ -1,8 +1,5 @@
-# AutoGit
-Git for dummies. Git them from zero to committing in just 4 scripts!
-
 = Instrucciones
-
+:source-highlighter: pygments
 :imagesdir: imagesdir/
 
 Git es un programa que nos permite controlar los cambios que todos hacemos para que no haya problemas de compatibilidad entre versiones. Ademas de esto, tambien nos permite subir el contenido al servidor FTP del profe de manera automatica.
@@ -13,35 +10,15 @@ Cree una serie de pequenos scripts para que sea mas facil para todos emplear git
 
 Para que esto funcione, necesitas una cuenta de Github, si no tienes una, puedes hacerla https://www.github.com[aqui].
 
-Una vez que tengas tu cuenta, vamos a necesitar llenar algunos datos en los scripts y  `04`. 
-
-En `04`, cambia los brackets `[YOURUSERNAMEHERE]` por tu nombre de usuario en github y `[YOUREMAILHERE]` por el correo que usaste para registrarte:
-
- git config --global user.name "YOURUSERNAMEHERE"
-
-a
-
- git config --global user.name "GordiBueno86"
-
-y
-
- git config --global user.email "YOUREMAILHERE"
-
-a
-
- git config --global user.email "A0128448@itesm.mx"
-
-
-Guarda tus cambios. 
-
 == Setup
 
 . Abre una ventana de de administrador de PowerShell en el directorio `Scripts`. Abre inicio y escribe `powershell`. Da un clic derecho en la entrada `powershell.exe` y selecciona `Correr con permisos de Administrador`.
-
++
 image::1.png[]
 
 . Navega al directorio donde estan los archivos usando `cd` como lo harias con una ventana de cmd normal.
 
++
 NOTE: Cada vez que te pida abrir una ventana de Powershell dentro de este tutorial, repite estos mismos pasos. 
 
 . Copia el contenido de `01` a tu ventana de Powershell y presiona Enter.
@@ -55,39 +32,63 @@ NOTE: Cada vez que te pida abrir una ventana de Powershell dentro de este tutori
 
     .. Dale que si a todo.
 
+    ... El archivo se empezara a ejecutar. No deberia de llevar mas de 5 minutos con una buena conexion a internet. En caso de que no haya progreso, presiona enter varias veces.
+
     .. Una vez que se haya terminado de ejecutar, cierra tu ventana de Powershell y vuelve a abrir otra como se senala en la seccion 1.
 
-    .. Repite los pasos i y ii cambiando el `02` por `03` y una vez mas con el `04`.
+    .. Repite los pasos a) y b) cambiando el `02` por `03` y una vez mas con el `04`.
 
 Ahora tendras la carpeta con la pagina web mas actual en tu escritorio.
 
 == Workflow
 
-Git funciona a base de "parches" que se aplican al programa base.
+Git funciona a base de "parches" que se aplican a una version centralizada en Github
 
-Estos parches o commits se hace usando la siguiente lista de comandos en el directorio donde se encuentra `index.html`
+Estos parches o commits se hace usando la siguiente lista de comandos en el directorio donde se encuentra `Specifications.pdf`
 
+[source,powershell]
+----
  git add *
- git commit
+ git commit -m "YOURMESSAGEHERE"
+----
+
+Dentro de las comillas, pon un mensaje resumiendo los cambios realizados.
 
 Cada vez que termines un milestone, crea un nuevo commit. No obstante, es posible que al tratar de uno commit haya colisiones. Hay que resolver estas manualmente.
 
 Una vez que un commit haya sido creado ( y reparado en caso de tener inconsistencias) puedes subirlo a github.
 
+[source,powershell]
+----
  git push
+----
 
-Si todo ha salido bien, finalmente puedes usar el comando
+.Workflow
+****
 
- git ftp push
+. Usa
++
+[source,powershell]
+----
+ git pull
+----
++
+para obtener los cambios mas recientes del servidor.
 
-Para subir los cambios al servidor FTP.
+. Resuelve conflictos manualmente en caso de haberlos.
 
-WARNING: El primer parche para unir el contenido que tengas con el contenido mas actual de Github es el que mas arde. Vas a tener que meter los cambio de manera manual, sustituyendo file por file o en el peor de los casos line by line. Despues de este, todo es de bajada. 
+. Ahora puedes realizar cambios en los archivos.
 
-NOTE: El numero de parches en git no deben de ser muchos, asi que sugiero subirlos al final del dia o al terminar de hacer una determinada tarea. Procura no subir cambios mas de 5 veces al dia.  
+. Al terminar de realizar cambios, sube a Github usando:
+[source,powershell]
+----
+ git add * 
+ git commit -m "YOURMESSAGEHERE"
+ git push
+----
 
-NOTE: Como todos vamos a estar trabajando en el archivo, puede que los cambios en el servidor FTP no se vean correctamente.
-Si esto llegara a ocurrir, `06` esta disenado para llevar un control externo de los cambios que yo puedo modificar. 
-Si llegara a ocurrir algun problema, yo lo resolveria antes de entregarlo.  
+****
+
+NOTE: El numero de commits en git no deben de ser muchos, asi que sugiero subirlos al final del dia o al terminar de hacer una determinada tarea. Procura no subir cambios mas de 5 veces al dia.  
 
 WARNING: Trate de automatizar lo mas posible el uso de git y subir los archivos pero no es infalible. Puede que halla errores. Aun asi, creo que el esfuerzo lo vale.
