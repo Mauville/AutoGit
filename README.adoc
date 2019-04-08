@@ -10,6 +10,13 @@ Cree una serie de pequenos scripts para que sea mas facil para todos emplear git
 
 Para que esto funcione, necesitas una cuenta de Github, si no tienes una, puedes hacerla https://www.github.com[aqui].
 
+Descarga este repositorio haciendo click en "Clone or Download" y seleccionando ZIP.
+
+image::this.png[]
+
+Descomprime el zip en una carpeta.
+
+
 == Setup
 
 . Abre una ventana de de administrador de PowerShell en el directorio `Scripts`. Abre inicio y escribe `powershell`. Da un clic derecho en la entrada `powershell.exe` y selecciona `Correr con permisos de Administrador`.
