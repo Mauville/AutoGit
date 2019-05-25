@@ -1,10 +1,10 @@
-= Instrucciones
+﻿= Instrucciones
 :source-highlighter: pygments
 :imagesdir: imagesdir/
 
 Git es un programa que nos permite controlar los cambios que todos hacemos para que no haya problemas de compatibilidad entre versiones. Ademas de esto, tambien nos permite subir el contenido al servidor FTP del profe de manera automatica.
 
-Cree una serie de pequenos scripts para que sea mas facil para todos emplear git y FTP. Este es un pequeno manual sobre como instalarlos. En la carpeta Scripts, hay varios archivos numerados. Hare referencias a ellos por sus numeros unicamente.
+Cree una serie de pequenos scripts para que sea mas facil para todos emplear. Este es un pequeno manual sobre como instalarlos. En la carpeta Scripts, hay varios archivos numerados. Hare referencias a ellos por sus numeros unicamente.
 
 == Prework 
 
@@ -44,6 +44,15 @@ NOTE: Cada vez que te pida abrir una ventana de Powershell dentro de este tutori
     .. Una vez que se haya terminado de ejecutar, cierra tu ventana de Powershell y vuelve a abrir otra como se senala en la seccion 1.
 
     .. Repite los pasos a) y b) cambiando el `02` por `03` y una vez mas con el `04`.
+
+    .. Este archivo te pedira ciertos datos. 
+    ... Username es el nombre de usuario que aparece en tu perfil de github
+
+image::username.png[width=500]
+
+    ... Repo name es el nombre del repositorio de donde quieres obtener el codigo. Este no es Mauville/AutoGit sino el nombre del repositorio de donde esta el proyecto que vas a trabajar.
+
+image::reponame.png[ejemplo, width=500]
 
 Ahora tendras la carpeta con la pagina web mas actual en tu escritorio.
 
