@@ -1,0 +1,95 @@
+﻿= Instrucciones
+:source-highlighter: pygments
+:imagesdir: imagesdir/
+
+Git es un programa que nos permite controlar los cambios que todos hacemos para que no haya problemas de compatibilidad entre versiones. 
+
+Este es un pequeno manual sobre como instalarlos. En la carpeta Scripts, hay varios archivos numerados. Hare referencias a ellos por sus numeros unicamente.
+
+== Prework 
+
+Para que esto funcione, necesitas una cuenta de Github, si no tienes una, puedes hacerla https://www.github.com[aqui].
+
+Descarga este repositorio haciendo click en "Clone or Download" y seleccionando ZIP.
+
+image::this.png[]
+
+Descomprime el zip en una carpeta.
+
+
+== Setup
+
+. Abre una ventana de de administrador de PowerShell en el directorio `Scripts`. Abre inicio y escribe `powershell`. Da un clic derecho en la entrada `powershell.exe` y selecciona `Correr con permisos de Administrador`.
++
+image::1.png[]
+
+. Navega al directorio donde estan los archivos usando `cd` como lo harias con una ventana de cmd normal.
+
++
+NOTE: Cada vez que te pida abrir una ventana de Powershell dentro de este tutorial, repite estos mismos pasos. 
+
+. Copia el contenido de `01` a tu ventana de Powershell y presiona Enter.
+
+. Dile que si a todo.
+
+== Instalacion
+. Ahora vamos a ejecutar el archivo `02` `03` y `04` para instalar git y preparar el espacio de trabajo.
+
+    .. En la ventana de powershell que tienes abierta, escribe `02` y presiona TAB para completar el nombre de archivo. Presiona ENTER.
+
+    .. Dale que si a todo.
+
+    ... El archivo se empezara a ejecutar. No deberia de llevar mas de 5 minutos con una buena conexion a internet. En caso de que no haya progreso, presiona enter varias veces.
+
+    .. Una vez que se haya terminado de ejecutar, cierra tu ventana de Powershell y vuelve a abrir otra como se senala en la seccion 1.
+
+    .. Repite los pasos a) y b) cambiando el `02` por `03` y una vez mas con el `04`.
+
+    ... Este archivo te pedira ciertos datos. 
+    ... Username es el nombre de usuario que aparece en tu perfil de github
++
+image::username.png[width=500]
++
+    ... Repo name es el nombre del repositorio de donde quieres obtener el codigo. Este no es Mauville/AutoGit sino el nombre del repositorio de donde esta el proyecto que vas a trabajar.
+
+image::reponame.png[ejemplo, width=500]
+
+Ahora tendras la carpeta con la version mas actual del proyecto.
+
+== Workflow
+
+Git funciona a base de "parches" que se aplican a una version centralizada en Github
+
+Estos "parches" o *commits* se hace usando la siguiente lista de comandos en el directorio donde se encuentran todos los archivos de tu proyecto.
+
+[source,powershell]
+.Workflow
+****
+
+. Usa
++
+[source,powershell]
+----
+ git pull
+----
++
+para obtener los cambios mas recientes del servidor.
+
+. Resuelve conflictos manualmente en caso de haberlos.
+
+. Ahora puedes realizar cambios en los archivos.
+
+. Al terminar de realizar cambios, sube a Github usando:
+[source,powershell]
+----
+ git add * 
+ git commit -m "YOURMESSAGEHERE"
+ git push
+----
+Dentro de las comillas, pon un mensaje corto resumiendo los cambios realizados.
+
+****
+
+NOTE: El numero de commits en git no deben de ser muchos, asi que sugiero subirlos al final del dia o al terminar de hacer una determinada tarea. Procura no subir cambios mas de 5 veces al dia.  
+
+WARNING: Trate de automatizar lo mas posible el uso de git y subir los archivos pero no es infalible. Puede que halla errores. Aun asi, creo que el esfuerzo lo vale.
